@@ -1,6 +1,9 @@
 using Farmora.Domain.Entities;
+using Farmora.Application.DTO.User;
+using Farmora.Application.Interfaces.Repositories;
+using Farmora.Application.Interfaces.Services;
 
-namespace Farmora.Application.Users;
+namespace Farmora.Infastructure.Services;
 
 public sealed class UserService(IUserRepository repository) : IUserService
 {

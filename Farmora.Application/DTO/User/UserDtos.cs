@@ -1,4 +1,4 @@
-namespace Farmora.Application.Users;
+namespace Farmora.Application.DTO.User;
 
 public sealed record CreateUserRequest(string Email, string? Phone, string Password);
 public sealed record UpdateUserRequest(string? Phone);

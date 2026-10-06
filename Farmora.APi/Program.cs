@@ -1,4 +1,3 @@
-using Farmora.Application.Users;
 using Farmora.Infastructure;
 using Farmora.Infastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +12,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FarmoraDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
 builder.Services.AddInfrastructure();
-builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 

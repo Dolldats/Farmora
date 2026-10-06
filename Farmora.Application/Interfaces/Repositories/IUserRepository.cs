@@ -1,6 +1,6 @@
 using Farmora.Domain.Entities;
 
-namespace Farmora.Application.Users;
+namespace Farmora.Application.Interfaces.Repositories;
 
 public interface IUserRepository
 {

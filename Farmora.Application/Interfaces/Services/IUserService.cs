@@ -1,4 +1,6 @@
-namespace Farmora.Application.Users;
+using Farmora.Application.DTO.User;
+
+namespace Farmora.Application.Interfaces.Services;
 
 public interface IUserService
 {

@@ -1,9 +1,9 @@
-using Farmora.Application.Users;
+using Farmora.Application.Interfaces.Repositories;
 using Farmora.Domain.Entities;
 using Farmora.Infastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Farmora.Infastructure.Users;
+namespace Farmora.Infastructure.Repositories;
 
 public sealed class UserRepository(FarmoraDbContext db) : IUserRepository
 {

@@ -1,4 +1,5 @@
-using Farmora.Application.Users;
+using Farmora.Application.DTO.User;
+using Farmora.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Farmora.APi.Controllers;
