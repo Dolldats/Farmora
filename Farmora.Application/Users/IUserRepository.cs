@@ -1,0 +1,11 @@
+using Farmora.Domain.Entities;
+
+namespace Farmora.Application.Users;
+
+public interface IUserRepository
+{
+    Task<bool> EmailExistsAsync(string email, CancellationToken cancellationToken);
+    Task<User?> GetAsync(Guid id, CancellationToken cancellationToken);
+    Task AddAsync(User user, CancellationToken cancellationToken);
+    Task SaveChangesAsync(CancellationToken cancellationToken);
+}
