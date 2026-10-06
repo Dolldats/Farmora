@@ -8,12 +8,4 @@ public sealed class UserResponse
     public string Status { get; init; } = string.Empty;
     public DateTime CreatedAtUtc { get; init; }
 
-    public UserResponse(Guid id, string email, string? phone, string status, DateTime createdAtUtc)
-    {
-        Id = id;
-        Email = email;
-        Phone = phone;
-        Status = status;
-        CreatedAtUtc = createdAtUtc;
-    }
 }

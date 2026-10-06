@@ -5,7 +5,6 @@ public sealed class ProductImage : Entity
     private ProductImage()
     { 
     }
-
     public ProductImage(Guid productId, string storageKey, string url, int sortOrder, bool isPrimary = false) 
     { 
         ProductId = productId; 

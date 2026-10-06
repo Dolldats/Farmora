@@ -19,6 +19,14 @@ public sealed class Farmer : AuditableEntity
     public FarmerVerificationStatus VerificationStatus { get; private set; } = FarmerVerificationStatus.Pending;
     public FarmerOperationalStatus OperationalStatus { get; private set; } = FarmerOperationalStatus.Inactive;
     public User User { get; private set; } = null!;
-    public void SetVerification(FarmerVerificationStatus status) { VerificationStatus = status; MarkUpdated(); }
-    public void SetOperationalStatus(FarmerOperationalStatus status) { OperationalStatus = status; MarkUpdated(); }
+    public void SetVerification(FarmerVerificationStatus status)
+    { 
+        VerificationStatus = status;
+        MarkUpdated(); 
+    }
+    public void SetOperationalStatus(FarmerOperationalStatus status)
+    { 
+        OperationalStatus = status;
+        MarkUpdated();
+    }
 }

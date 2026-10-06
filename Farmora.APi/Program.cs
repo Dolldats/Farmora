@@ -1,6 +1,7 @@
 using Farmora.Infastructure;
 using Farmora.Infastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<FarmoraDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("DefaultConnection is not configured.");
+builder.Services.AddDbContext<FarmoraDbContext>(options => options.UseNpgsql(connectionString));
 builder.Services.AddInfrastructure();
 
 var app = builder.Build();
@@ -29,3 +31,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
