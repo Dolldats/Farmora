@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Farmora.APi/Farmora.APi.csproj" />
+  <Project Path="Farmora.Application/Farmora.Application.csproj" />
+  <Project Path="Farmora.Domain/Farmora.Domain.csproj" />
+  <Project Path="Farmora.Infastructure/Farmora.Infastructure.csproj" />
+</Solution>
