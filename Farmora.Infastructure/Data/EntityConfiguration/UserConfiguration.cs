@@ -25,6 +25,28 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
             builder.Property(x => x.PasswordHash)
                 .IsRequired();
 
+            builder.Property(x => x.Status)
+                .HasConversion<string>()
+                .HasMaxLength(20)
+                .IsRequired();
+
+            builder.Property(x => x.IsEmailConfirmed)
+                .IsRequired();
+
+            builder.Property(x => x.FailedLoginAttempts)
+                .IsRequired();
+
+            builder.Property(x => x.SecurityStampVersion)
+                .IsRequired();
+
+            builder.Property(x => x.RowVersion)
+                .IsRowVersion();
+
+            builder.HasMany(x => x.UserRoles)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasOne(x => x.Customer)
                 .WithOne(x => x.User)
                 .HasForeignKey<Customer>(x => x.UserId)
@@ -36,5 +58,4 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
-       
 }
